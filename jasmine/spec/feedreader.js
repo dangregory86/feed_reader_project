@@ -28,8 +28,8 @@ $(function() {
          * and that the URL is not empty.
          */
     it('have URL', function() {
-      for (feed in allFeeds) {
-        expect(feed.url).toBeDefined;
+      for (var x = 0; x < 4; x++) {
+        expect(allFeeds[x].url).toBeDefined();
       }
     });
 
@@ -38,8 +38,8 @@ $(function() {
          * and that the name is not empty.
          */
     it('have name', function() {
-      for (feed in allFeeds) {
-        expect(feed.name).toBeDefined;
+      for (var x = 0; x < 4; x++) {
+        expect(allFeeds[x].name).toBeDefined();
       }
     });
 
