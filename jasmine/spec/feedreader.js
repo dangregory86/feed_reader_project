@@ -48,7 +48,6 @@ $(function() {
   /* TODO: Write a new test suite named "The menu" */
   describe("The menu", function() {
 
-
     /* TODO: Write a test that ensures the menu element is
        * hidden by default. You'll have to analyze the HTML and
        * the CSS to determine how we're performing the
@@ -75,9 +74,9 @@ $(function() {
 
   });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+  /* TODO: Write a new test suite named "Initial Entries" */
 
-    /* TODO: Write a test that ensures when the loadFeed
+  /* TODO: Write a test that ensures when the loadFeed
            * function is called and completes its work, there is at least
            * a single .entry element within the .feed container.
            * Remember, loadFeed() is asynchronous so this test will require
@@ -90,12 +89,11 @@ $(function() {
     });
 
     //now check that the h2 element in the first entry isn't === undefined.
-    it('has loaded content', function(done){
+    it('has loaded content', function(done) {
       expect($('.entry h2')[0]).toBeDefined();
       done();
     });
   });
-
 
   /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -104,14 +102,14 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-  describe("New Feed Selection", function(){
+  describe("New Feed Selection", function() {
     let original = $('.header-title').html();
     //first load the css tricks feed.
-    beforeEach(function(done){
+    beforeEach(function(done) {
       loadFeed(1, done);
     });
     //ensure the .header-title changes on the screen
-    it('has changed the screen content', function(done){
+    it('has changed the screen content', function(done) {
       expect($('.header-title').html()).not.toBe(original);
       done();
     });
