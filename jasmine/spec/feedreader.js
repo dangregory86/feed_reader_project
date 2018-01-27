@@ -93,9 +93,10 @@ $(function() {
 
     //load feed 0, set original to the contents of feed zero then load feed 1.
     beforeEach(function(done) {
-      loadFeed(0);
-      original = $('.feed').html();
-      loadFeed(1, done);
+      loadFeed(0, function(){
+        original = $('.feed').html();
+        loadFeed(1, done);
+      });
     });
 
     //ensure the .feed changes on the screen
