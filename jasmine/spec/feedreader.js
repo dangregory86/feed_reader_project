@@ -27,7 +27,7 @@ $(function() {
          * and it isnt empty.
          */
     it('have URL', function() {
-      allFeeds.forEach(function(feed){
+      allFeeds.forEach(function(feed) {
         expect(feed.url).toBeDefined();
         expect(feed.url).not.toBe('');
       });
@@ -37,7 +37,7 @@ $(function() {
          * and it isnt empty.
          */
     it('have name', function() {
-      allFeeds.forEach(function(feed){
+      allFeeds.forEach(function(feed) {
         expect(feed.name).toBeDefined();
         expect(feed.name).not.toBe('');
       });
@@ -69,9 +69,6 @@ $(function() {
 
   });
 
-
-
-
   /* A test suite to ensure the feed loads onto the screen
   */
   describe("Initial Entries", function() {
@@ -87,42 +84,22 @@ $(function() {
     });
   });
 
-
   /* A test suite to ensure the page displays the new information depending on the
          * feed loaded.
          */
 
   describe("New Feed Selection", function() {
     let original = $('.feed').html();
-    let testNumber = 0;
 
-    //first load the css tricks feed.
+    //load feed 0, set original to the contents of feed zero then load feed 1.
     beforeEach(function(done) {
-
-      loadFeed(testNumber, done);
+      loadFeed(0);
+      original = $('.feed').html();
+      loadFeed(1, done);
     });
-
 
     //ensure the .feed changes on the screen
     it('has changed the screen content 1', function(done) {
-      expect($('.feed').html()).not.toBe(original);
-      original = $('.feed').html();
-      testNumber++;
-      done();
-    });
-    it('has changed the screen content 2', function(done) {
-      expect($('.feed').html()).not.toBe(original);
-      original = $('.feed').html();
-      testNumber++;
-      done();
-    });
-    it('has changed the screen content 3', function(done) {
-      expect($('.feed').html()).not.toBe(original);
-      original = $('.feed').html();
-      testNumber++;
-      done();
-    });
-    it('has changed the screen content 4', function(done) {
       expect($('.feed').html()).not.toBe(original);
       done();
     });
